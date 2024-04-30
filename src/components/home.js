@@ -80,32 +80,35 @@ export function HomeComponent({ className }) {
   );
 
   return (
-    <Card className={cn("w-[380px] adapt an", className)}>
-      <CardHeader>
-        <CardTitle>Dashboard</CardTitle>
-        <CardDescription>
-          Panel central para administrar el quiz
-        </CardDescription>
-      </CardHeader>
-      <CardFooter className="flex flex-col gap-4 switchContainer items-start justify-start">
-        <div className="flex items-center space-x-2 switchContainer">
-          <Switch id="airplane-mode" onClick={updateDoc1} checked={first} />
-          <Label htmlFor="airplane-mode">Quiz 1</Label>
-        </div>
-        <Button className="w-full an2">Mostrar al ganador del quiz 1</Button>
-        <div className="flex items-center space-x-4 mt-4 switchContainer">
+    <>
+      <Card className={cn("w-[380px] adapt an", className)}>
+        <CardHeader>
+          <CardTitle>Dashboard</CardTitle>
+          <CardDescription>
+            Panel central para administrar el quiz
+          </CardDescription>
+        </CardHeader>
+        <CardFooter className="flex flex-col gap-4 switchContainer items-start justify-start">
+          <div className="flex items-center space-x-2 switchContainer">
+            <Switch id="airplane-mode" onClick={updateDoc1} checked={first} />
+            <Label htmlFor="airplane-mode">Quiz 1</Label>
+          </div>
+          <Button className="w-full an2">Mostrar al ganador del quiz</Button>
+          {/* <div className="flex items-center space-x-4 mt-4 switchContainer">
           <Switch id="airplane-mode" onClick={updateDoc2} checked={second} />
           <Label htmlFor="airplane-mode">Quiz 2</Label>
         </div>
-        <Button className="w-full an2">Mostrar al ganador del quiz 2</Button>
+        <Button className="w-full an2">Mostrar al ganador del quiz 2</Button> */}
 
-        <p>
-          El ganador del quiz 1 es {w1name} con {w1points} puntos
-        </p>
-        <p>
+          {/* <p>
           El ganador del quiz 2 es {w2name} con {w2points} puntos
-        </p>
-      </CardFooter>
-    </Card>
+        </p> */}
+        </CardFooter>
+      </Card>
+      <Card className="winnerContainer">
+        <p className="winner">{w1name}</p>
+        <p>{w1points}/20</p>
+      </Card>
+    </>
   );
 }

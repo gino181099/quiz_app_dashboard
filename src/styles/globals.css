@@ -5,3 +5,15 @@
   display: flex;
   gap: 16px;
 }
+.winnerContainer {
+  padding: 24px;
+  margin-top: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.winner {
+  font-size: 48px;
+  font-weight: 500;
+}
